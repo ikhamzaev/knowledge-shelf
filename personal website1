@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Media Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color:#D3D3D3;
+            color: #120404;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+}
+
+       
+#scrollUpBtn {
+    position: fixed;
+    bottom: 20px; /* 20px from the bottom of the page */
+    right: 20px;  /* 20px from the right side of the page */
+    background-color: #b06c19; /* Button color */
+    color: white;  /* Text color */
+    border: none;  /* No border */
+    padding: 10px 20px; /* Some padding to make the button look good */
+    border-radius: 50%;  /* Make it round */
+    font-size: 20px;  /* Text size */
+    cursor: pointer;  /* Pointer cursor on hover */
+    display: none;  /* Initially hide the button */
+}
+
+#scrollUpBtn:hover {
+    opacity: 0.8; /* Darker green on hover */
+}
+
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.2em;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main content layout */
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        /* Global News and Articles Layout */
+        .main-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .news, .articles {
+            width: 48%; /* Each section takes up half the screen with some gap */
+        }
+
+        /* Separators */
+        .separator {
+            border-top: 2px solid #ccc;
+            margin: 40px 0;
+        }
+
+        /* Section Titles */
+        .section-title {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2em;
+            color: #444;
+        }
+
+        /* Card layout for YouTube links, Books, Movies */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 15px;
+        }
+
+        .card-content h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .card-content p {
+            font-size: 1em;
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Your Media Hub</h1>
+    <nav>
+        <a href="#global-news">Global News</a>
+        <a href="#articles">Articles</a>
+        <a href="#youtube">YouTube</a>
+        <a href="#books">Books</a>
+        <a href="#movies">Movies</a>
+    </nav>
+</header>
+
+<div class="container">
+    <!-- Global News and Articles Section -->
+    <div id="global-news" class="main-content">
+        <div class="news">
+            <h2 class="section-title">Global News</h2>
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200" alt="News Image 1">
+                <div class="card-content">
+                    <h3>Headline News 1</h3>
+                    <p>Short description of the global news. A few lines to keep it engaging.</p>
+                </div>
+            </div>
+            <!-- Add more news items here -->
+        </div>
+        <div class="articles">
+            <h2 class="section-title">Articles</h2>
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200" alt="Article Image 1">
+                <div class="card-content">
+                    <h3>Article Title 1</h3>
+                    <p>Brief summary of the article content. A snippet to entice the reader.</p>
+                </div>
+            </div>
+            <!-- Add more articles here -->
+        </div>
+    </div>
+
+    <div class="separator"></div>
+
+    <!-- YouTube Links Section -->
+    <section id="youtube">
+        <h2 class="section-title">YouTube Links</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200" alt="YouTube Video 1">
+                <div class="card-content">
+                    <h3>YouTube Video Title 1</h3>
+                    <p>Brief description or link to the video on YouTube.</p>
+                </div>
+            </div>
+            <!-- Add more YouTube links here -->
+        </div>
+    </section>
+
+    <div class="separator"></div>
+
+    <!-- Books Section -->
+    <section id="books">
+        <h2 class="section-title">Books Recommendations</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200" alt="Book 1">
+                <div class="card-content">
+                    <h3>Book Title 1</h3>
+                    <p>Brief description of the book with a captivating summary.</p>
+                </div>
+            </div>
+            <!-- Add more books here -->
+        </div>
+    </section>
+
+    <div class="separator"></div>
+
+    <!-- Movies Section -->
+    <section id="movies">
+        <h2 class="section-title">Movie Recommendations</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200" alt="Movie 1">
+                <div class="card-content">
+                    <h3>Movie Title 1</h3>
+                    <p>Brief description or summary of the movie recommendation.</p>
+                </div>
+            </div>
+            <!-- Add more movies here -->
+        </div>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2025 Your Media Hub. All rights reserved.</p>
+</footer>
+<!-- Scroll-Up Button HTML -->
+<button id="scrollUpBtn" title="Go to top">↑</button>
+
+<!-- JavaScript Code at the Bottom -->
+<script>
+    // Get the button
+    let scrollUpBtn = document.getElementById("scrollUpBtn");
+
+    // When the user scrolls down 100px from the top, show the button
+    window.onscroll = function() {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            scrollUpBtn.style.display = "block";  // Show button
+        } else {
+            scrollUpBtn.style.display = "none";   // Hide button
+        }
+    };
+
+    // When the button is clicked, scroll to the top
+    scrollUpBtn.onclick = function() {
+        document.body.scrollTop = 0;  // Safari
+        document.documentElement.scrollTop = 0;  // Chrome, Firefox, etc.
+    };
+</script>
+
+
+
+</body>
+</html>
